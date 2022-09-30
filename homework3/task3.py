@@ -16,10 +16,15 @@ def list_fractions(list_num):
 
 def subtract_max_min_fractions(list_num):
     fraction_list = list_fractions(list_num)
-    try:
-        return max(fraction_list) - min(fraction_list)
-    except:
+    if len(fraction_list) == 1:
+        return fraction_list[0]
+    elif len(fraction_list) == 0:
         return 0
+    else:
+        if max(fraction_list) - min(fraction_list) != 0.0:
+            return max(fraction_list) - min(fraction_list)
+        else:
+            return 0
 
 print(subtract_max_min_fractions([1.1, 1.2, 3.1, 5, 10.01]))
 print(subtract_max_min_fractions(f.input_list_num()))
